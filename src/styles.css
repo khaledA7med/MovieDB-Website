@@ -33,3 +33,7 @@ nav a{
     background-color: #a8a8a83d;;
     height: 1px;
 }
+.col-md-3:hover{
+    border: 1px solid blue !important;
+    box-shadow: 10px 20px 30px steelblue !important;
+}

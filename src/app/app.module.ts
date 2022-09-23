@@ -8,7 +8,7 @@ import { AboutComponent } from './about/about.component';
 import { MoviesComponent } from './movies/movies.component';
 import { TvShowComponent } from './tv-show/tv-show.component';
 import { PeopleComponent } from './people/people.component';
-import { NetworksComponent } from './networks/networks.component';
+
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { NotFoundComponent } from './not-found/not-found.component';
@@ -31,7 +31,6 @@ import { HeaderComponent } from './header/header.component';
     MoviesComponent,
     TvShowComponent,
     PeopleComponent,
-    NetworksComponent,
     RegisterComponent,
     LoginComponent,
     NotFoundComponent,
