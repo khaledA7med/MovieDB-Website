@@ -1,0 +1,10 @@
+p ,.tagline{
+    color: #949cb0;
+}
+.border{
+    border-radius: 3%;
+    -webkit-border-radius: 3%;
+    -moz-border-radius: 3%;
+    -ms-border-radius: 3%;
+    -o-border-radius: 3%;
+}

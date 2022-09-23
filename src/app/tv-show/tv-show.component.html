@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="row my-5">
+        <div class="col-md-12 text-center">
+            <div class="brdr w-25 my-5 mx-auto"></div>
+            <h2>Trending  <br>
+                TV <br>
+                To Watch Now
+            </h2>
+            <p>Trending TV To Watch Now</p>
+            <div class="brdr w-100 my-5"></div>
+        </div>
+        <div *ngFor="let tv of trendingTv" class="col-md-3 position-relative">
+            <div class="tv">
+                <img [src]="imagePrefix+tv.poster_path" class="w-100" alt="">
+                <h3 class="h6 mt-3 text-center mb-5">{{tv.title}} {{tv.name}}</h3>
+            </div>
+            <div class="vote position-absolute top-0 end-0">{{tv.vote_average}}</div>
+        </div>
+    </div>
+</div>

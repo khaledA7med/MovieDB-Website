@@ -1,0 +1,12 @@
+footer{
+    border-top: 0.5ch solid #24baef;
+}
+a:hover{
+    color: #24baef !important;
+}
+i:hover{
+    color: #24baef !important;
+}
+.social{
+    border-bottom: 0.5ch solid #24baef;
+}

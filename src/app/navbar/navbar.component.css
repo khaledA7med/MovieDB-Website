@@ -1,0 +1,15 @@
+.navbar-brand{
+    color: #24BAEF !important;
+    font-size: 48px;
+    font-weight: 700;
+}
+.nav-item :hover{
+    color: #fff !important;
+}
+.line{
+    height: 1px;
+    background-color: #24baef !important;
+}
+nav a:focus{
+    color: #fff !important;
+}

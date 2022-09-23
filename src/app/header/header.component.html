@@ -1,0 +1,13 @@
+<header class="vh-100 d-flex align-items-end">
+    <div class="container">
+        <owl-carousel-o [options]="customOptions">
+
+            <ng-container *ngFor="let all of headertrendingall">
+                <ng-template carouselSlide [id]="all.id">
+                    <img [src]="imagePrefix+all.poster_path">
+                </ng-template>
+            </ng-container>
+
+        </owl-carousel-o>
+    </div>
+</header>
