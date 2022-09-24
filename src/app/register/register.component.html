@@ -1,56 +1,69 @@
 <div class="container">
-    <div class="row w-75 mx-auto">
-        <form #registerform="ngForm" (ngSubmit)="registerForm(registerform)">
-            <div class="my-3">
-                <label for="first_name">First Name</label>
+    <div class="row w-50 mx-auto">
+        <div class="head bg-info text-center mb-5">
+            <h1>Register Form</h1>
+        </div>
+        <form class="my-3 mb-5" #registerform="ngForm" (ngSubmit)="registerForm(registerform)">
+            <div *ngIf="errors" class="alert alert-danger my-2">{{errors}}</div>
+            <div class="my-3 px-5">
+                <label class="form-label" for="first_name">First Name</label>
                 <input ngModel #first_name="ngModel" class="form-control" type="text" name="first_name" required
                     minlength="3" maxlength="10">
-                <p class="text text-danger my-1" *ngIf="first_name.errors?.['required'] && first_name.touched">* First
+                <p class="text text-danger my-1" *ngIf="first_name.errors?.['required'] && first_name.touched">*
+                    First
                     name is required</p>
-                <p class="text text-danger my-1" *ngIf="first_name.errors?.['minlength'] && first_name.touched">* First
+                <p class="text text-danger my-1" *ngIf="first_name.errors?.['minlength'] && first_name.touched">*
+                    First
                     name must be between 3 - 10 letters</p>
             </div>
-            <div class="my-3">
-                <label for="last_name">Last Name</label>
+            <div class="my-3 px-5">
+                <label class="form-label" for="last_name">Last Name</label>
                 <input ngModel #last_name="ngModel" class="form-control" type="text" name="last_name" required
                     minlength="3" maxlength="10">
-                <p class="text text-danger my-1" *ngIf="last_name.errors?.['required'] && last_name.touched">* Last name
+                <p class="text text-danger my-1" *ngIf="last_name.errors?.['required'] && last_name.touched">* Last
+                    name
                     is required</p>
                 <p class="text text-danger my-1"
-                    *ngIf="last_name.errors?.['minlength, maxlength'] && last_name.touched">* Last name must be between
+                    *ngIf="last_name.errors?.['minlength'] && last_name.touched">* Last name must be
+                    between
                     3 - 10 letters</p>
             </div>
-            <div class="my-3">
-                <label for="email">Email</label>
+            <div class="my-3 px-5">
+                <label class="form-label" for="email">Email</label>
                 <input ngModel #email="ngModel" class="form-control" type="email" name="email" required email>
-                <p class="text text-danger my-1" *ngIf="email.errors?.['required'] && email.touched">* Email is required
+                <p class="text text-danger my-1" *ngIf="email.errors?.['required'] && email.touched">* Email is
+                    required
                 </p>
-                <p class="text text-danger my-1" *ngIf="email.errors?.['email'] && email.touched">* Email is invalid</p>
+                <p class="text text-danger my-1" *ngIf="email.errors?.['email'] && email.touched">* Email is invalid
+                </p>
             </div>
-            <div class="my-3">
-                <label for="password">Password</label>
+            <div class="my-3 px-5">
+                <label class="form-label" for="password">Password</label>
                 <input ngModel #password="ngModel" class="form-control" type="password" name="password" required
                     password minlength="8" maxlength="16"
                     pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,16}$">
-                <p class="text text-danger my-1" *ngIf="password.errors?.['required'] && password.touched">* Password is
+                <p class="text text-danger my-1" *ngIf="password.errors?.['required'] && password.touched">*
+                    Password is
                     required</p>
                 <p class="text text-danger my-1" *ngIf="password.errors?.['minlength, maxlength'] && password.touched">*
                     Password must be between 8 - 16 characters</p>
                 <p class="text text-danger my-1" *ngIf="password.errors?.['pattern'] && password.touched">* Password
-                    must have minimum eight characters, at least one letter, one number and one special character</p>
+                    must have minimum eight characters, at least one letter, one number and one special character
+                </p>
             </div>
-            <div class="my-3">
-                <label for="age">Age</label>
+            <div class="my-3 px-5">
+                <label class="form-label" for="age">Age</label>
                 <input ngModel #age="ngModel" class="form-control" type="number" name="age" required min="16" max="60">
-                <p class="text text-danger my-1" *ngIf="age.errors?.['required'] && age.touched">* Age is required</p>
+                <p class="text text-danger my-1" *ngIf="age.errors?.['required'] && age.touched">* Age is required
+                </p>
                 <p class="text text-danger my-1" *ngIf="age.errors?.['min'] && age.touched">* Age must be +16</p>
-                <p class="text text-danger my-1" *ngIf="age.errors?.['max'] && age.touched">* Age must not be +60</p>
+                <p class="text text-danger my-1" *ngIf="age.errors?.['max'] && age.touched">* Age must not be +60
+                </p>
 
             </div>
-            <div class="text-center">
+            <div class="text-center my-3">
                 <button class="btn btn-outline-info" [disabled]="registerform.invalid" type="submit">Register</button>
             </div>
-            <div *ngIf="errors" class="alert alert-danger my-2">{{errors}}</div>
         </form>
 
 
