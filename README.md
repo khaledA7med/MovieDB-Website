@@ -1,3 +1,13 @@
+#About Project
+
+this is my first project with Angular FrameWork
+Routing
+Authentication & Authorization
+Guard
+Services
+RXjs
+APIs
+
 # MovieDB
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.2.
