@@ -1,11 +1,11 @@
 <div class="container">
-    <div class="row w-50 mx-auto">
+    <div class="row">
         <div class="head bg-info text-center mb-5">
             <h1>Register Form</h1>
         </div>
-        <form class="my-3 mb-5" #registerform="ngForm" (ngSubmit)="registerForm(registerform)">
+        <form class="row my-2 mb-5" #registerform="ngForm" (ngSubmit)="registerForm(registerform)">
             <div *ngIf="errors" class="alert alert-danger my-2">{{errors}}</div>
-            <div class="my-3 px-5">
+            <div class="col-md-6 my-2 px-5">
                 <label class="form-label" for="first_name">First Name</label>
                 <input ngModel #first_name="ngModel" class="form-control" type="text" name="first_name" required
                     minlength="3" maxlength="10">
@@ -16,19 +16,19 @@
                     First
                     name must be between 3 - 10 letters</p>
             </div>
-            <div class="my-3 px-5">
+            <div class="col-md-6 my-2 px-5">
                 <label class="form-label" for="last_name">Last Name</label>
                 <input ngModel #last_name="ngModel" class="form-control" type="text" name="last_name" required
                     minlength="3" maxlength="10">
                 <p class="text text-danger my-1" *ngIf="last_name.errors?.['required'] && last_name.touched">* Last
                     name
                     is required</p>
-                <p class="text text-danger my-1"
-                    *ngIf="last_name.errors?.['minlength'] && last_name.touched">* Last name must be
+                <p class="text text-danger my-1" *ngIf="last_name.errors?.['minlength'] && last_name.touched">* Last
+                    name must be
                     between
                     3 - 10 letters</p>
             </div>
-            <div class="my-3 px-5">
+            <div class="col-md-6 my-2 px-5">
                 <label class="form-label" for="email">Email</label>
                 <input ngModel #email="ngModel" class="form-control" type="email" name="email" required email>
                 <p class="text text-danger my-1" *ngIf="email.errors?.['required'] && email.touched">* Email is
@@ -37,7 +37,7 @@
                 <p class="text text-danger my-1" *ngIf="email.errors?.['email'] && email.touched">* Email is invalid
                 </p>
             </div>
-            <div class="my-3 px-5">
+            <div class="col-md-6 my-2 px-5">
                 <label class="form-label" for="password">Password</label>
                 <input ngModel #password="ngModel" class="form-control" type="password" name="password" required
                     password minlength="8" maxlength="16"
@@ -51,7 +51,7 @@
                     must have minimum eight characters, at least one letter, one number and one special character
                 </p>
             </div>
-            <div class="my-3 px-5">
+            <div class="col-md-6 my-2 px-5">
                 <label class="form-label" for="age">Age</label>
                 <input ngModel #age="ngModel" class="form-control" type="number" name="age" required min="16" max="60">
                 <p class="text text-danger my-1" *ngIf="age.errors?.['required'] && age.touched">* Age is required

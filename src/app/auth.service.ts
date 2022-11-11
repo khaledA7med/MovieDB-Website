@@ -19,9 +19,7 @@ export class AuthService {
 
   saveuser() {
     let decodedUser = JSON.stringify(localStorage.getItem('accessToken'));
-    // this.userData = jwtDecode(decodedUser);
     this.userData.next(jwtDecode(decodedUser));
-    // console.log(this.userData.getValue());
   }
   register(registerForm: any): Observable<any> {
     return this._HttpClient.post(

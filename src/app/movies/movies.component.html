@@ -9,7 +9,7 @@
             <p>Trending Movies To Watch Now</p>
             <div class="brdr w-100 my-5"></div>
         </div>
-        <div *ngFor="let movie of trendingMovies" class="col-md-3 position-relative">
+        <div *ngFor="let movie of trendingMovies" class="col-md-3 position-relative item">
             <div class="movie">
                 <a [routerLink]="['/MovieDetails' , movie.id]" class="list-unstyled text-decoration-none">
                     <img [src]="imagePrefix+movie.poster_path" class="w-100" alt="">

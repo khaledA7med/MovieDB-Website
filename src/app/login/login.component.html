@@ -4,8 +4,8 @@
             <h1>Login Form</h1>
         </div>
         <div *ngIf="errors" class="alert alert-danger my-3">{{errors}}</div>
-        <form class="my-3" #loginform="ngForm" (ngSubmit)="loginForm(loginform)">
-            <div class="my-5 px-5">
+        <form class="row my-3" #loginform="ngForm" (ngSubmit)="loginForm(loginform)">
+            <div class="my-2 px-5">
                 <label for="email" class="form-label">Email</label>
                 <input ngModel #email="ngModel" class="form-control" type="email" name="email" required email>
                 <p class="text text-danger my-1" *ngIf="email.errors?.['required'] && email.touched">* Email is
@@ -14,7 +14,7 @@
                 <p class="text text-danger my-1" *ngIf="email.errors?.['email'] && email.touched">* Email is invalid
                 </p>
             </div>
-            <div class="my-5 px-5">
+            <div class="my-2 px-5">
                 <label for="password" class="form-label">Password</label>
                 <input ngModel #password="ngModel" class="form-control" type="password" name="password" required
                     password minlength="8" maxlength="16"

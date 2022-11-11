@@ -10,7 +10,7 @@
             <p>Trending All To Watch Now</p>
             <div class="brdr w-100 my-5"></div>
         </div>
-        <div *ngFor="let all of trendingAll" class="col-md-3 position-relative">
+        <div *ngFor="let all of trendingAll" class="col-md-3 position-relative item">
             <div class="all">
                 <img [src]="imagePrefix+all.poster_path" class="w-100" alt="">
                 <h3 class="h6 mt-3 text-center mb-5">{{all.title}} {{all.name}}</h3>

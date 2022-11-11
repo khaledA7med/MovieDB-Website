@@ -9,7 +9,7 @@
             <p>Trending People To Watch Now</p>
             <div class="brdr w-100 my-5"></div>
         </div>
-        <div *ngFor="let person of trendingPeople" class="col-md-3 position-relative">
+        <div *ngFor="let person of trendingPeople" class="col-md-3 position-relative item">
             <div class="person">
                 <img [src]="imagePrefix+person.profile_path" class="w-100" alt="">
                 <h3 class="h6 mt-3 text-center mb-5">{{person.title}} {{person.name}}</h3>
