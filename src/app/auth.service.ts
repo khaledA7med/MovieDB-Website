@@ -9,32 +9,30 @@ import { BehaviorSubject, Observable } from 'rxjs';
 })
 export class AuthService {
   userData = new BehaviorSubject(null);
+
   constructor(private _HttpClient: HttpClient, private _Router: Router) {
-    if (localStorage.getItem('accessToken') != null) {
+
+    if (localStorage.getItem('token') != null) {
       this.saveuser();
     } else {
       this._Router.navigate(['login']);
     }
   }
 
-  saveuser() {
-    let decodedUser = JSON.stringify(localStorage.getItem('accessToken'));
-    this.userData.next(jwtDecode(decodedUser));
-  }
-  register(registerForm: any): Observable<any> {
-    return this._HttpClient.post(
-      'https://route-egypt-api.herokuapp.com/signup',
-      registerForm
-    );
-  }
   login(loginForm: any): Observable<any> {
     return this._HttpClient.post(
-      'https://route-egypt-api.herokuapp.com/signin',
+      'https://dummyjson.com/auth/login',
       loginForm
     );
   }
+
+  saveuser() {
+    let decodedUser = JSON.stringify(localStorage.getItem('token'));
+    this.userData.next(jwtDecode(decodedUser));
+  }
+
   logout() {
-    localStorage.removeItem('accessToken');
+    localStorage.removeItem('token');
     this.userData.next(null);
     this._Router.navigate(['login']);
   }

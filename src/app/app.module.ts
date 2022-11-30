@@ -9,7 +9,6 @@ import { MoviesComponent } from './movies/movies.component';
 import { TvShowComponent } from './tv-show/tv-show.component';
 import { PeopleComponent } from './people/people.component';
 
-import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -31,7 +30,6 @@ import { HeaderComponent } from './header/header.component';
     MoviesComponent,
     TvShowComponent,
     PeopleComponent,
-    RegisterComponent,
     LoginComponent,
     NotFoundComponent,
     NavbarComponent,

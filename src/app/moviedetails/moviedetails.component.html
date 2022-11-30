@@ -7,11 +7,12 @@
             <div class="col-md-6 py-2">
                 <h2 class="mb-3">{{movieDetails.title}}</h2>
                 <h4 class="tagline">{{movieDetails.tagline}}</h4>
-                <h5 class="my-5">Vote : {{movieDetails.vote_average}}</h5>
-                <h5 class="my-5">Vote count : {{movieDetails.vote_count}}</h5>
-                <h5 class="my-5">Popularity : {{movieDetails.popularity}}</h5>
-                <h5 class="my-5">Release Date : {{movieDetails.release_date}}</h5>
-                <p class="my-5">{{movieDetails.overview}}</p>
+                <h5 class="my-5 rate"><span class="text-info">Vote : </span> <i class='bx bxs-star'></i> {{movieDetails.vote_average | number:'1.1-1'}}</h5>
+                <h5 class="my-5"><span class="text-info">Vote count :</span> {{movieDetails.vote_count}}</h5>
+                <h5 class="my-5"><span class="text-info">Popularity :</span> {{movieDetails.popularity}}</h5>
+                <h5 class="my-5"><span class="text-info">Release Date :</span> {{movieDetails.release_date}}</h5>
+                <h5 class="my-1"><span class="text-info">Overview :</span></h5>
+                <p>{{movieDetails.overview}}</p>
             </div>
         </div>
     </div>

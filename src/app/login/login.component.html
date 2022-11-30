@@ -4,36 +4,29 @@
             <h1>Login Form</h1>
         </div>
         <div *ngIf="errors" class="alert alert-danger my-3">{{errors}}</div>
-        <form class="row my-3" #loginform="ngForm" (ngSubmit)="loginForm(loginform)">
-            <div class="my-2 px-5">
-                <label for="email" class="form-label">Email</label>
-                <input ngModel #email="ngModel" class="form-control" type="email" name="email" required email>
-                <p class="text text-danger my-1" *ngIf="email.errors?.['required'] && email.touched">* Email is
+        <form #loginform="ngForm" (ngSubmit)="loginForm(loginform)">
+            <div class="my-5 px-5">
+                <label for="username" class="form-label">Username : kminchelle</label>
+                <input ngModel #username="ngModel" class="form-control" type="username" name="username" required
+                    minlength="8" maxlength="16">
+                <p class="text text-danger my-1" *ngIf="username.errors?.['required'] && username.touched">* username is
                     required
                 </p>
-                <p class="text text-danger my-1" *ngIf="email.errors?.['email'] && email.touched">* Email is invalid
-                </p>
+                <p class="text text-danger my-1" *ngIf="username.errors?.['minlength'] && username.touched">*
+                    Username must be between 8 - 16 letters</p>
             </div>
-            <div class="my-2 px-5">
-                <label for="password" class="form-label">Password</label>
+            <div class="my-5 px-5">
+                <label for="password" class="form-label">Password : 0lelplR</label>
                 <input ngModel #password="ngModel" class="form-control" type="password" name="password" required
-                    password minlength="8" maxlength="16"
-                    pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,16}$">
+                    password minlength="6" maxlength="15">
                 <p class="text text-danger my-1" *ngIf="password.errors?.['required'] && password.touched">*
                     Password is
                     required</p>
                 <p class="text text-danger my-1" *ngIf="password.errors?.['minlength, maxlength'] && password.touched">*
-                    Password must be between 8 - 16 characters</p>
-                <p class="text text-danger my-1" *ngIf="password.errors?.['pattern'] && password.touched">* Password
-                    must have minimum eight characters, at least one letter, one number and one special character
-                </p>
+                    Password must be between 6 - 15 characters</p>
             </div>
-
-            <div class="text-center">
+            <div class="text-center mb-5">
                 <button class="btn btn-outline-info" [disabled]="loginform.invalid" type="submit">Login</button>
-            </div>
-            <div class="my-5 mx-auto text-center">
-                <p>do you have account? <a [routerLink]="['/register']">Register</a></p>
             </div>
         </form>
     </div>

@@ -8,3 +8,6 @@ p ,.tagline{
     -ms-border-radius: 3%;
     -o-border-radius: 3%;
 }
+.rate i{
+    color: gold;
+}

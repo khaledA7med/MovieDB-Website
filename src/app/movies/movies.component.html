@@ -16,7 +16,7 @@
                     <h3 class="h6 mt-3 text-center mb-5">{{movie.title}} {{movie.name}}</h3>
                 </a>
             </div>
-            <div class="vote position-absolute top-0 end-0">{{movie.vote_average}}</div>
+            <div class="vote position-absolute top-0 end-0 rate"> <i class='bx bxs-star'></i> {{movie.vote_average | number:'1.1-1'}}</div>
         </div>
     </div>
 </div>

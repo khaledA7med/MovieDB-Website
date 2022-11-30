@@ -14,22 +14,19 @@ export class LoginComponent implements OnInit {
 constructor(private _AuthService:AuthService , private _Router:Router) { }
 
 loginForm(loginform:any){
-  console.log(loginform.value);
   this._AuthService.login(loginform.value).subscribe({
     next:(res) =>{
-      console.log(res);
-      if(res.message == 'success'){
-        console.log('login success');
+      if(res){
         this._Router.navigate(['home']);
-        localStorage.setItem('accessToken',res.token);
+        localStorage.setItem('token',res.token);
         this._AuthService.saveuser();
       } else {
         this.errors = res.message;
-        console.log('login fail');
+        alert('login fail !, please try again');
       }
     }, error:(err) =>{
       console.log(err.errors.message);
-    }, complete() {}
+    }
   });
 }
 

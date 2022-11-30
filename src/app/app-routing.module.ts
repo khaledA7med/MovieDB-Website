@@ -8,7 +8,6 @@ import { MoviedetailsComponent } from './moviedetails/moviedetails.component';
 import { MoviesComponent } from './movies/movies.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { PeopleComponent } from './people/people.component';
-import { RegisterComponent } from './register/register.component';
 import { TvShowComponent } from './tv-show/tv-show.component';
 
 const routes: Routes = [
@@ -19,7 +18,6 @@ const routes: Routes = [
   {path:'MovieDetails/:id',canActivate:[AuthGuard], component:MoviedetailsComponent},
   {path:'tv-shows',canActivate:[AuthGuard], component:TvShowComponent},
   {path:'people',canActivate:[AuthGuard], component:PeopleComponent},
-  {path:'register', component:RegisterComponent},
   {path:'login', component:LoginComponent},
   {path:'**', component:NotFoundComponent},
 ];
