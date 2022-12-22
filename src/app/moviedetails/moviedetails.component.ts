@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { MoviesService } from '../movies.service';
 
 @Component({
@@ -14,8 +15,15 @@ export class MoviedetailsComponent implements OnInit {
 
   constructor(
     private _ActivatedRoute: ActivatedRoute,
-    private _MoviesService: MoviesService
-  ) {}
+    private _MoviesService: MoviesService,
+    private _NgxSpinnerService: NgxSpinnerService
+  ) {
+    this._NgxSpinnerService.show();
+    setTimeout(() => {
+      /** spinner ends after 5 seconds */
+      this._NgxSpinnerService.hide();
+    }, 2000);
+  }
 
   ngOnInit(): void {
     this.id = this._ActivatedRoute.snapshot.params['id'];

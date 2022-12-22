@@ -1,0 +1,11 @@
+<div class="container">
+    <owl-carousel-o [options]="customOptions">
+
+        <ng-container *ngFor="let popular of getPopularMovies">
+            <ng-template carouselSlide [id]="popular.id">
+                <img [src]="imagePrefix+popular.poster_path">
+            </ng-template>
+        </ng-container>
+
+    </owl-carousel-o>
+</div>

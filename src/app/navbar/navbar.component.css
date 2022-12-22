@@ -1,7 +1,8 @@
 .navbar-brand{
     color: #24BAEF !important;
-    font-size: 48px;
+    font-size: 42px;
     font-weight: 700;
+    margin-right: 50px;
 }
 .nav-item :hover{
     color: #fff !important;

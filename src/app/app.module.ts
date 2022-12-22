@@ -1,3 +1,4 @@
+import { NgxSpinnerModule } from 'ngx-spinner';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -19,7 +20,7 @@ import { MoviedetailsComponent } from './moviedetails/moviedetails.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { HeaderComponent } from './header/header.component';
-
+import { PopularmoviesComponent } from './popularmovies/popularmovies.component';
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import { HeaderComponent } from './header/header.component';
     FooterComponent,
     MoviedetailsComponent,
     HeaderComponent,
+    PopularmoviesComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,7 +45,8 @@ import { HeaderComponent } from './header/header.component';
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    CarouselModule
+    CarouselModule,
+    NgxSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

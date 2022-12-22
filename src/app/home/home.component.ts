@@ -1,3 +1,4 @@
+import { NgxSpinnerService } from 'ngx-spinner';
 import { Component, OnInit } from '@angular/core';
 import { MoviesService } from '../movies.service';
 
@@ -12,10 +13,17 @@ export class HomeComponent implements OnInit {
   trendingTv:any[] = [];
   trendingAll:any[] = [];
   trendingPeople:any[] = [];
+  popularMovies:any[] = [];
 
   imagePrefix:string='https://image.tmdb.org/t/p/w500/';
  
-  constructor(private _MoviesService:MoviesService) { }
+  constructor(private _MoviesService:MoviesService, private _NgxSpinnerService:NgxSpinnerService) { 
+    this._NgxSpinnerService.show();
+    setTimeout(() => {
+      /** spinner ends after 5 seconds */
+      this._NgxSpinnerService.hide();
+    }, 2000);
+  }
 
   ngOnInit(): void {
 
@@ -39,6 +47,11 @@ export class HomeComponent implements OnInit {
         this.trendingPeople = res.results; 
       }
     });
+    this._MoviesService.getpopularmovies().subscribe({
+      next: (res)=>{
+        this.popularMovies = res.results;
+      }
+    })
   }
 
 }

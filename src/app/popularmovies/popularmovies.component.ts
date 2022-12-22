@@ -1,12 +1,12 @@
-import { Component, Input, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  selector: 'app-popularmovies',
+  templateUrl: './popularmovies.component.html',
+  styleUrls: ['./popularmovies.component.css']
 })
-export class HeaderComponent implements OnInit {
+export class PopularmoviesComponent implements OnInit {
   imagePrefix:string='https://image.tmdb.org/t/p/w500/';
 
   customOptions: OwlOptions = {
@@ -15,12 +15,10 @@ export class HeaderComponent implements OnInit {
     touchDrag: false,
     pullDrag: false,
     dots: false,
-    autoplay: true,
-    autoplaySpeed: 700,
-    autoplayTimeout: 1500,
     navSpeed: 700,
-    margin:10,
-    navText: ['', ''],
+    
+    margin:15,
+    navText: ['r', 'l'],
     responsive: {
       0: {
         items: 1
@@ -32,12 +30,14 @@ export class HeaderComponent implements OnInit {
         items: 3
       },
       940: {
-        items: 6
+        items: 4
       }
     },
     nav: true
   }
-  @Input() headertrendingall:any [] = [];
+
+  @Input() getPopularMovies:any [] = [];
+
   constructor() { }
 
   ngOnInit(): void {
