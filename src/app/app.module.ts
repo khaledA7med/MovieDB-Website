@@ -14,14 +14,13 @@ import { LoginComponent } from './login/login.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
-import { FormsModule } from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { MoviedetailsComponent } from './moviedetails/moviedetails.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { HeaderComponent } from './header/header.component';
 import { PopularmoviesComponent } from './popularmovies/popularmovies.component';
-
 
 @NgModule({
   declarations: [
@@ -46,9 +45,10 @@ import { PopularmoviesComponent } from './popularmovies/popularmovies.component'
     HttpClientModule,
     BrowserAnimationsModule,
     CarouselModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    ReactiveFormsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300&display=swap");
+
 body {
   font-family: "Montserrat Alternates", sans-serif;
   background-color: #000;
@@ -9,6 +10,7 @@ body {
 .bg-color {
   background-color: #131722;
 }
+
 .bg-colour {
   background-color: #03243f;
 }
@@ -28,10 +30,12 @@ nav a {
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
 }
+
 .brdr {
   background-color: #a8a8a83d;
   height: 1px;
 }
+
 .item {
   /* background-color: #ddd; */
   text-decoration: none;
@@ -43,13 +47,14 @@ nav a {
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(40, 176, 214, 0.3);
+  /* box-shadow: 0 2px 5px rgba(40, 176, 214, 0.3); */
   transition: all 0.3s ease-in-out;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   -ms-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
 }
+
 .item:hover {
   transform: scale(1.1);
   -webkit-transform: scale(1.1);

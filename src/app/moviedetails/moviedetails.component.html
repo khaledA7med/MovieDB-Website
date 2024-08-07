@@ -1,20 +1,23 @@
 <div class="row">
-    <div class="col-md-9 mx-auto border border-secondary">
+    <div class="col-9 mx-auto border border-secondary">
         <div class="row">
-            <div class="col-md-6 py-2">
-                <img [src] = "imagePrefix+movieDetails.poster_path" class="w-100 h-100" alt="">
+            <div class="col-6 h-25 py-2">
+                <img [src]="imagePrefix+movieDetails?.poster_path" class="w-75 h-75" alt="">
             </div>
-            <div class="col-md-6 py-2">
-                <h2 class="mb-3">{{movieDetails.title}}</h2>
-                <h4 class="tagline">{{movieDetails.tagline}}</h4>
-                <h5 class="my-5 rate"><span class="text-info">Vote : </span> <i class='bx bxs-star'></i> {{movieDetails.vote_average | number:'1.1-1'}}</h5>
-                <h5 class="my-5"><span class="text-info">Vote count :</span> {{movieDetails.vote_count}}</h5>
-                <h5 class="my-5"><span class="text-info">Popularity :</span> {{movieDetails.popularity}}</h5>
-                <h5 class="my-5"><span class="text-info">Release Date :</span> {{movieDetails.release_date}}</h5>
+            <div class="col-md-6 h-25 py-2">
+                <h2 class="mb-3">{{movieDetails?.title}}</h2>
+                <h4 class="tagline">{{movieDetails?.tagline}}</h4>
+                <h5 class="my-5 rate"><span class="text-info">Vote : </span> <i class='bx bxs-star'></i>
+                    {{movieDetails?.vote_average | number:'1.1-1'}}</h5>
+                <h5 class="my-5"><span class="text-info">Vote count :</span> {{movieDetails?.vote_count}}</h5>
+                <h5 class="my-5"><span class="text-info">Popularity :</span> {{movieDetails?.popularity}}</h5>
+                <h5 class="my-5"><span class="text-info">Release Date :</span> {{movieDetails?.release_date}}</h5>
                 <h5 class="my-1"><span class="text-info">Overview :</span></h5>
-                <p>{{movieDetails.overview}}</p>
+                <p>{{movieDetails?.overview}}</p>
             </div>
         </div>
     </div>
 </div>
-<ngx-spinner bdColor = "rgba(0, 0, 0)" size = "medium" color = "#fff" type = "triangle-skew-spin" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner>
+<ngx-spinner bdColor="rgba(0, 0, 0)" size="medium" color="#fff" type="triangle-skew-spin" [fullScreen]="true">
+    <p style="color: white"> Loading... </p>
+</ngx-spinner>

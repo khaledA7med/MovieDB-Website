@@ -4,30 +4,37 @@
             <h1>Login Form</h1>
         </div>
         <div *ngIf="errors" class="alert alert-danger my-3">{{errors}}</div>
-        <form #loginform="ngForm" (ngSubmit)="loginForm(loginform)">
+        <form [formGroup]="Form" (ngSubmit)="loginForm(Form)">
             <div class="my-5 px-5">
-                <label for="username" class="form-label">Username : kminchelle</label>
-                <input ngModel #username="ngModel" class="form-control" type="username" name="username" required
-                    minlength="8" maxlength="16">
-                <p class="text text-danger my-1" *ngIf="username.errors?.['required'] && username.touched">* username is
+                <label for="username" class="form-label">Username</label>
+                <input class="form-control" formControlName="username" type="text" name="username">
+                <p class="text text-danger my-1" *ngIf="(f.username?.touched || submitted) && f.username?.invalid">*
+                    username is
                     required
                 </p>
-                <p class="text text-danger my-1" *ngIf="username.errors?.['minlength'] && username.touched">*
-                    Username must be between 8 - 16 letters</p>
             </div>
             <div class="my-5 px-5">
-                <label for="password" class="form-label">Password : 0lelplR</label>
-                <input ngModel #password="ngModel" class="form-control" type="password" name="password" required
-                    password minlength="6" maxlength="15">
-                <p class="text text-danger my-1" *ngIf="password.errors?.['required'] && password.touched">*
+                <label for="password" class="form-label">Password</label>
+                <input class="form-control" type="password" name="password" formControlName="password">
+                <p class="text text-danger my-1" *ngIf="(f.password?.touched || submitted) && f.password?.invalid">*
                     Password is
                     required</p>
-                <p class="text text-danger my-1" *ngIf="password.errors?.['minlength, maxlength'] && password.touched">*
-                    Password must be between 6 - 15 characters</p>
             </div>
             <div class="text-center mb-5">
-                <button class="btn btn-outline-info" [disabled]="loginform.invalid" type="submit">Login</button>
+                <button class="btn btn-outline-info" [disabled]="Form.invalid" type="submit">Login</button>
             </div>
         </form>
+        <div class="text-center"> <button class="btn btn-outline-warning" (click)="getUser()">Get Credential</button>
+        </div>
+        <!-- <div class="row w-50 d-flex justify-content-center" *ngIf="user">
+            <div class="col-12 align-items-center">
+                <div>
+                    Username : {{user?.username}}
+                </div>
+                <div>
+                    Password : {{user?.password}}
+                </div>
+            </div>
+        </div> -->
     </div>
 </div>

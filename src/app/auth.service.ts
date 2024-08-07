@@ -10,8 +10,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 export class AuthService {
   userData = new BehaviorSubject(null);
 
-  constructor(private _HttpClient: HttpClient, private _Router: Router) {
-
+  constructor(private http: HttpClient, private _Router: Router) {
     if (localStorage.getItem('token') != null) {
       this.saveuser();
     } else {
@@ -20,10 +19,11 @@ export class AuthService {
   }
 
   login(loginForm: any): Observable<any> {
-    return this._HttpClient.post(
-      'https://dummyjson.com/auth/login',
-      loginForm
-    );
+    return this.http.post('https://dummyjson.com/auth/login', loginForm);
+  }
+
+  getUser(): Observable<any> {
+    return this, this.http.get('https://dummyjson.com/users/1');
   }
 
   saveuser() {

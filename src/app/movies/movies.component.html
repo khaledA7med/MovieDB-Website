@@ -1,23 +1,26 @@
 <div class="container">
     <div class="row my-5">
-        <div class="col-md-12 text-center">
+        <div class="col-12 text-center">
             <div class="brdr w-25 my-5 mx-auto"></div>
             <h2>Trending <br>
-                Movies  <br>
+                Movies <br>
                 To Watch Now
             </h2>
             <p>Trending Movies To Watch Now</p>
             <div class="brdr w-100 my-5"></div>
         </div>
-        <div *ngFor="let movie of trendingMovies" class="col-md-3 position-relative item">
-            <div class="movie">
+        <div *ngFor="let movie of trendingMovies" class="col-3 position-relative item">
+            <div class="movie p-2">
                 <a [routerLink]="['/MovieDetails' , movie.id]" class="list-unstyled text-decoration-none">
                     <img [src]="imagePrefix+movie.poster_path" class="w-100" alt="">
                     <h3 class="h6 mt-3 text-center mb-5">{{movie.title}} {{movie.name}}</h3>
                 </a>
             </div>
-            <div class="vote position-absolute top-0 end-0 rate"> <i class='bx bxs-star'></i> {{movie.vote_average | number:'1.1-1'}}</div>
+            <div class="vote position-absolute top-0 end-0 rate"> <i class='bx bxs-star'></i> {{movie.vote_average |
+                number:'1.1-1'}}</div>
         </div>
     </div>
 </div>
-<ngx-spinner bdColor = "rgba(0, 0, 0)" size = "medium" color = "#fff" type = "triangle-skew-spin" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner>
+<ngx-spinner bdColor="rgba(0, 0, 0)" size="medium" color="#fff" type="triangle-skew-spin" [fullScreen]="true">
+    <p style="color: white"> Loading... </p>
+</ngx-spinner>
