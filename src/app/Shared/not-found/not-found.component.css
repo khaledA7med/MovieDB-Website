@@ -1,6 +1,6 @@
-.not-found{
+.not-found {
     height: 150vh;
-    background-image: url('../../assets/notfound.jpg');
+    background-image: url('../../../assets/notfound.jpg');
     background-size: cover;
     background-position: center center;
 }

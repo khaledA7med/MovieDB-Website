@@ -1,0 +1,68 @@
+<!-- <div class="about">
+    <div class="container">
+        <div class="row">
+            <h1 class="text-center">My Info</h1>
+            <hr>
+            <div class="col-6">
+                <div class="row">
+                    <div class="col-4">Name</div>
+                    <div class="col-6">{{userData?.firstName}} {{userData?.maidenName}} {{userData?.lastName}}</div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="row">
+                    <div class="col-4">Age</div>
+                    <div class="col-6">{{userData?.age}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+<div class="container">
+    <div class="row">
+        <h1 class="text-center">My Info</h1>
+        <hr>
+        <div class="col-6">
+            <div class="profile-card">
+                <div class="profile-info">
+                    <div class="profile-item">
+                        <label>Name:</label>
+                        <span>{{userData?.firstName}} {{userData?.maidenName}} {{userData?.lastName}}</span>
+                    </div>
+                    <div class="profile-item">
+                        <label>Age:</label>
+                        <span>{{ userData?.age }}</span>
+                    </div>
+                    <div class="profile-item">
+                        <label>Gender:</label>
+                        <span>{{ userData?.gender }}</span>
+                    </div>
+                    <div class="profile-item">
+                        <label>BirthDate:</label>
+                        <span>{{ userData?.birthDate | date}}</span>
+                    </div>
+                    <!-- Add more fields as needed -->
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="profile-card">
+                <div class="profile-info">
+                    <div class="profile-item">
+                        <label>Name:</label>
+                        <span>{{userData?.firstName}} {{userData?.maidenName}} {{userData?.lastName}}</span>
+                    </div>
+                    <div class="profile-item">
+                        <label>Age:</label>
+                        <span>{{ userData?.age }}</span>
+                    </div>
+                    <div class="profile-item">
+                        <label>Gender:</label>
+                        <span>{{ userData?.gender }}</span>
+                    </div>
+                    <!-- Add more fields as needed -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

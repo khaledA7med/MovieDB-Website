@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
-import { MoviesService } from '../movies.service';
+import { MoviesService } from '../../Services/movies.service';
 
 @Component({
   selector: 'app-moviedetails',
@@ -11,7 +11,7 @@ import { MoviesService } from '../movies.service';
 export class MoviedetailsComponent implements OnInit {
   id: string = '';
   movieDetails: any;
-  imagePrefix:string='https://image.tmdb.org/t/p/w500/';
+  imagePrefix: string = 'https://image.tmdb.org/t/p/w500/';
 
   constructor(
     private _ActivatedRoute: ActivatedRoute,
