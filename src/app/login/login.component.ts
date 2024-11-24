@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit {
     this.submitted = true;
     this.authService.login(loginform.value).subscribe({
       next: (res) => {
-        localStorage.setItem('token', res.token);
+        localStorage.setItem('token', res.accessToken);
         this.authService.saveuser();
         this.submitted = false;
         const Toast = Swal.mixin({
